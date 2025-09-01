@@ -1,54 +1,52 @@
 <!DOCTYPE html>
 <html lang="th">
-<head> 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cafe App</title>
-<link rel="stylesheet" href="style.css">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cafe App</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-<h1>ร้านกาแฟออนไลน์</h1>
-
-<div class="order-form">
-<label>ชื่อเมนู</label>
-<input type="text" id="MenuName" placeholder="เช่น กาแฟลาเต้">
-
-<label>จำนวน</label>
-<input type="number" id="quantity" placeholder="1" min="1">
-
-<label>ราคา (บาท)</label>
-<input type="number" id="price" placeholder="50" min="0">
-
-<button onclick="addOrder()">เพิ่มรายการ</button>
-</div>
-
-<h2> รายการที่สั่งซื้อ </h2>
-<table id="orderTable">
-<thead>
-<tr>
-<th>เมนู</th>
-<th>จำนวน</th>
-<th>ราคา/หน่วย</th>
-<th>รวม</th>
-<th>ลบ</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-
-
-<h3 id="totalPrice">รวมทั้งหมด:0 บาท</h3>
-<button onclick="generatePDf()">พิมพ์ใบสั่งซื้อ (PDF)</button>
-</div>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
-<script src="app.js"></script>
+	<div class="container">
+		<h1>Earth Coffee Shop</h1>
+		
+		<div class="order-form">
+			<label>ชื่อเมนู:</label>
+			<input type="text" id="menuName" placeholder="เช่น กาแฟลาเต้">
+			
+			<label>จำนวน:</label>
+			<input type="number" id="quantity" placeholder="1" min="1">
+			
+			<label>ราคา(บาท):</label>
+			<input type="number" id="price" placeholder="50" min="0">
+			
+			<button onclick="addOrder()">เพิ่มรายการ</button>
+		</div>
+		
+		<h2>รายการสั่งซื้อ</h2>
+		<table id="orderTable">
+			<thead>
+				<tr>
+					<th>เมนู</th>
+					<th>จำนวน</th>
+					<th>ราคา/หน่วย</th>
+					<th>รวม</th>
+					<th>ลบ</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+		
+		<h3 id="totalPrice">รวมทั้งหมด:0 บาท</h3>
+		<button onclick="generatePDF()">พิมพ์ใบสั่งซื้อ(PDF)</button>
+	</div>
+	
+	<!-- jsPDF + autoTable -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+	<script src="app.js"></script>
 </body>
-
 </html>
 
 

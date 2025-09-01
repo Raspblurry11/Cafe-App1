@@ -16,13 +16,13 @@ function addOrder() {
 }
 
 function removeOrder(index) {
-	orders.slice(index, 1)
+	orders.splice(index, 1)
 	renderTable();
 }
 
-function removeOrder(index) {
+function renderTable() {
 	const tbody = document.querySelector('#orderTable tbody');
-	toby.innerHTML = '';
+	tbody.innerHTML = '';
 	let total = 0;
 	
 	orders,forEach((order, index) => {
@@ -88,4 +88,5 @@ doc.setFontSize(10);
 doc.text("Thank you for visitingSAN Coffee Shop ", 300, doc.lastAutoTable.finalY+ 50, { align: "center" });
 
 doc.save("receipt.pdf");
+
 }
